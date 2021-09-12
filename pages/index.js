@@ -27,7 +27,7 @@ export default function Home({ exploreData, cardData }) {
         </section>
 
         <section>
-          <h2 className="text-4xl font-semibold py-8 pt-16"> Check out this week's best deals!</h2>
+          <h2 className="text-4xl font-semibold py-8 pt-16 "> Check out this week's best deals!</h2>
 
           <div className="flex space-x-3 overflow-scroll pt-4 scrollbar-hide">
             {cardData?.map(({ img, title }) => (
