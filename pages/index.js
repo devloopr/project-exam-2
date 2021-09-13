@@ -4,6 +4,8 @@ import Banner from "../components/Banner";
 import SmCard from "../components/SmCard";
 import MediumCard from "../components/MediumCard";
 import LargeCard from "../components/LargeCard";
+import Footer from "../components/Footer";
+
 
 export default function Home({ exploreData, cardData }) {
   return (
@@ -15,7 +17,7 @@ export default function Home({ exploreData, cardData }) {
 
       <Header />
       <Banner />
-
+{/* 
       <main className="max-w-7xl mx-auto px-8 sm:px-16 bg-green-100">
         <section className="pt-6">
           <h2 className="text-4xl font-semibold pb-5 pt-12">explore Bergen city</h2>
@@ -36,7 +38,8 @@ export default function Home({ exploreData, cardData }) {
           </div>
         </section>
         <LargeCard img="https://i.ibb.co/xCWmszS/2006-generated.jpg" title="poolparty" description="or a nice mountain trip? Bergen has it All!" buttonText="Get Inspired" />
-      </main>
+      </main> */}
+      <Footer />
     </div>
   );
 }
@@ -53,3 +56,5 @@ export async function getStaticProps() {
     },
   };
 }
+
+
