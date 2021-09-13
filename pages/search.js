@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { format } from "date-fns";
 import InfoCard from "../components/InfoCard";
+import Map from "../components/Map";
 
 function Search({ searchResults }) {
   const router = useRouter();
@@ -17,7 +18,7 @@ function Search({ searchResults }) {
     <div>
       <Header placeholder={`${location} | ${range} | ${noOfGuests} guests`} />
 
-      <main className="flex">
+      <main className="flex bg-green-50">
         <section className="flex-grow pt-14 px-6">
           <p className="text-xs">
             300+ stays - {range} - for {noOfGuests} guests
@@ -37,6 +38,9 @@ function Search({ searchResults }) {
               <InfoCard key={img} img={img} location={location} title={title} description={description} star={star} price={price} total={total} />
             ))}
           </div>
+        </section>
+        <section className="hidden xl:inline-flex xl:min-w-[600px]">
+          <Map searchResults={searchResults} />
         </section>
       </main>
 
