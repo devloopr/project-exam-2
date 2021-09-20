@@ -1,4 +1,4 @@
-import Image from "next/Image";
+import Image from "next/image";
 
 function SmCard({ img, location, distance }) {
   return (

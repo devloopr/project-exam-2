@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useRouter } from "next/dist/client/router";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
@@ -16,6 +17,12 @@ function Search({ searchResults }) {
 
   return (
     <div>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charSet="utf-8" />
+        <title>holidaZe</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Header placeholder={`${location} | ${range} | ${noOfGuests} guests`} />
 
       <main className="flex bg-green-50">
@@ -34,8 +41,8 @@ function Search({ searchResults }) {
           </div>
 
           <div className="flex flex-col">
-            {searchResults.map(({ img, location, title, description, star, price, total }) => (
-              <InfoCard key={img} img={img} location={location} title={title} description={description} star={star} price={price} total={total} />
+            {searchResults.map((item) => (
+              <InfoCard key={item.id} img={item.img[0].url} location={item.location} title={item.title} description={item.description} star={item.star} price={item.price} total={item.total} />
             ))}
           </div>
         </section>
@@ -52,7 +59,7 @@ function Search({ searchResults }) {
 export default Search;
 
 export async function getServerSideProps() {
-  const searchResults = await fetch("https://links.papareact.com/isz").then((res) => res.json());
+  const searchResults = await fetch("http://localhost:1337/hotels").then((res) => res.json());
 
   return {
     props: {

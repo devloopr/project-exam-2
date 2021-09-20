@@ -46,17 +46,17 @@ function Header({ placeholder }) {
   return (
     <header className="grid grid-cols-3 sticky top-0 z-50 bg-green-100 shadow-md py-5 px-5 md:px-10">
       <div onClick={() => router.push("/")} className="relative flex items-center h-10 cursor-pointer my-auto">
-        <Image src="https://links.papareact.com/qd3" layout="fill" objectFit="contain" objectPosition="left" />
+        <Image src="https://res.cloudinary.com/dvloopr/image/upload/v1631821511/VISIONNER_28496535e6.jpg" layout="fill" objectFit="contain" objectPosition="left" />
       </div>
 
       <div className="invisible sm:visible flex items-center border-2 border-gray-600 rounded-full py-2 md:shadow-sm">
         <input value={searchInput} onChange={(e) => setSearchInput(e.target.value)} className="hidden sm:inline flex-grow pl-5 bg-transparent outline-none text-sm text-gray-600 placeholder-gray-600" type="text" placeholder={placeholder || "Start your search"} />
-        <SearchIcon className="hidden sm:inline-flex h-8 bg-red-400 text-white rounded-full p-2 cursor-pointer sm:mx-2" />
+        <SearchIcon onClick={search} className="hidden sm:inline-flex h-8 bg-red-400 text-white rounded-full p-2 cursor-pointer sm:mx-2" />
       </div>
 
       <div className="flex justify-end items-center space-x-4 text-red-400 ">
         <HeartIcon className="animate-beat h-6 cursor-pointer" />
-        <UserIcon className="h-6 cursor-pointer" />
+        <UserIcon onClick={() => router.push("/login")} className="h-6 cursor-pointer" />
         <MenuIcon className="h-6 cursor-pointer" />
       </div>
 
