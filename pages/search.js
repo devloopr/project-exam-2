@@ -23,7 +23,7 @@ function Search({ searchResults }) {
         <title>holidaZe</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header placeholder={`${location} | ${range} | ${noOfGuests} guests`} />
+      <Header placeholder={`Welcome to the login!`} />
 
       <main className="flex bg-green-50">
         <section className="flex-grow pt-14 px-6">
