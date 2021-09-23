@@ -5,6 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
+
 const schema = yup.object().shape({
   password: yup.string().required("Enter your password").min(3),
   identifier: yup.string().matches(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/, "You have to enter an valid email adress"),
@@ -49,16 +50,6 @@ function login() {
   }
 
   return (
-    // <div className="bg-green-100">
-    //   <form onSubmit={login}>
-    //     <p> {success} </p>
-    //     <label htmlFor="name">Name</label>
-    //     <input id="name" name="name" type="text" autoComplete="name" required />
-    //     <label htmlFor="password">password</label>
-    //     <input id="password" name="password" type="text" autoComplete="password" required />
-    //     <button type="submit">Login</button>
-    //   </form>
-    // </div>
     <>
       <form className="p-8 flex flex-col" onSubmit={handleSubmit(loginHandler)}>
         <label htmlFor="name">Username:</label>

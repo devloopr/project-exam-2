@@ -1,7 +1,5 @@
 import Image from "next/image";
-import { SearchIcon, UsersIcon } from "@heroicons/react/solid";
-import { MenuIcon } from "@heroicons/react/solid";
-import { UserIcon } from "@heroicons/react/solid";
+import { SearchIcon, UserIcon } from "@heroicons/react/solid";
 import { HeartIcon } from "@heroicons/react/solid";
 import { useState } from "react";
 import "react-date-range/dist/styles.css"; // main style file
@@ -57,7 +55,6 @@ function Header({ placeholder }) {
       <div className="flex justify-end items-center space-x-4 text-red-400 ">
         <HeartIcon className="animate-beat h-6 cursor-pointer" />
         <UserIcon onClick={() => router.push("/login")} className="h-6 cursor-pointer" />
-        <MenuIcon className="h-6 cursor-pointer" />
       </div>
 
       {searchInput && (
@@ -65,7 +62,7 @@ function Header({ placeholder }) {
           <DateRangePicker ranges={[selectionRange]} minDate={new Date()} rangeColors={["#f4595f"]} onChange={handleSelect} />
           <div className="flex items-center border-b mb-4">
             <h2 className="text-2xl flex-grow font-semibold">Number of guests</h2>
-            <UsersIcon className="h-5 pr-2" />
+            <UserIcon className="h-5 pr-2" />
             <input value={noOfGuests} onChange={(e) => setNoOfGuests(e.target.value)} type="number" min={1} className="w-12 pl-2 text-lg outline-none text-red-400" />
           </div>
           <div className="flex">

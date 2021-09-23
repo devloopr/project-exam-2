@@ -20,6 +20,9 @@ module.exports = {
         },
       },
     },
+    flex: {
+      initial: "0 1 40%",
+    },
   },
   variants: {
     extend: {},

@@ -1,9 +1,12 @@
+import React from "react";
+import Admin from "../components/Admin"
+
 function admin() {
   return (
     <div>
-      <h1>this is admin dashboard</h1>
+      <Admin />
     </div>
-  )
+  );
 }
 
-export default admin
+export default admin;

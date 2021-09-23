@@ -5,6 +5,7 @@ import SmCard from "../components/SmCard";
 import MediumCard from "../components/MediumCard";
 import LargeCard from "../components/LargeCard";
 import Footer from "../components/Footer";
+import { NavBar } from "../components/NavBar";
 
 export default function Home({ exploreData, cardData }) {
   return (
@@ -15,8 +16,9 @@ export default function Home({ exploreData, cardData }) {
         <title>holidaZe</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <NavBar />
       <Header />
+
       <Banner />
 
       <main className="max-w-7xl mx-auto px-8 sm:px-16 bg-green-100">
