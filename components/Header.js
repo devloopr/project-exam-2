@@ -44,7 +44,7 @@ function Header({ placeholder }) {
   return (
     <header className="grid grid-cols-3 sticky top-0 z-50 bg-green-100 shadow-md py-5 px-5 md:px-10">
       <div onClick={() => router.push("/")} className="relative flex items-center h-10 cursor-pointer my-auto">
-        <Image src="https://res.cloudinary.com/dvloopr/image/upload/v1631821511/VISIONNER_28496535e6.jpg" layout="fill" objectFit="contain" objectPosition="left" />
+        <Image src="https://res.cloudinary.com/dvloopr/image/upload/v1632485150/beste_Logo_63df5ea6a6.png" layout="fill" objectFit="contain" objectPosition="left" />
       </div>
 
       <div className="invisible sm:visible flex items-center border-2 border-gray-600 rounded-full py-2 md:shadow-sm">

@@ -4,6 +4,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      fontFamily: {
+        logo: ["gluten", "500"],
+      },
       animation: {
         wiggle: "wiggle 1s ease-in-out infinite",
         spin: "spin 20s linear infinite",

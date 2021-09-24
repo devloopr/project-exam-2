@@ -16,43 +16,45 @@ function Search({ searchResults }) {
   const range = `${formattedStartDate} - ${formattedEndDate}`;
 
   return (
-    <div>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta charSet="utf-8" />
-        <title>holidaZe</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Header placeholder={`Welcome to the login!`} />
+    <>
+      <div>
+        <Head>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta charSet="utf-8" />
+          <title>holidaZe</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <Header placeholder={`Welcome to the login!`} />
 
-      <main className="flex bg-green-50">
-        <section className="flex-grow pt-14 px-6">
-          <p className="text-xs">
-            300+ stays - {range} - for {noOfGuests} guests
-          </p>
-          <h1 className="text-3xl font-semibold mt-2 mb-6">Stays in {location}:</h1>
+        <main className="flex bg-green-50">
+          <section className="flex-grow pt-14 px-6">
+            <p className="text-xs">
+              300+ stays - {range} - for {noOfGuests} guests
+            </p>
+            <h1 className="text-3xl font-semibold mt-2 mb-6">Stays in {location}:</h1>
 
-          <div className="hidden lg:inline-flex mb-5 space-x-3 text-gray-800 whitespace-nowrap">
-            <p className="px-4 py-2 border rounded-full cursor-pointer hover:shadow-lg active:scale-95 active:bg-green-50 transition transform duration-100 ease-out">Cancellation Flex</p>
-            <p className="px-4 py-2 border rounded-full cursor-pointer hover:shadow-lg active:scale-95 active:bg-green-50 transition transform duration-100 ease-out">type Of Place</p>
-            <p className="px-4 py-2 border rounded-full cursor-pointer hover:shadow-lg active:scale-95 active:bg-green-50 transition transform duration-100 ease-out">Price</p>
-            <p className="px-4 py-2 border rounded-full cursor-pointer hover:shadow-lg active:scale-95 active:bg-green-50 transition transform duration-100 ease-out">rooms</p>
-            <p className="px-4 py-2 border rounded-full cursor-pointer hover:shadow-lg active:scale-95 active:bg-green-50 transition transform duration-100 ease-out">yei</p>
-          </div>
+            <div className="hidden lg:inline-flex mb-5 space-x-3 text-gray-800 whitespace-nowrap">
+              <p className="px-4 py-2 border rounded-full cursor-pointer hover:shadow-lg active:scale-95 active:bg-green-50 transition transform duration-100 ease-out">Cancellation Flex</p>
+              <p className="px-4 py-2 border rounded-full cursor-pointer hover:shadow-lg active:scale-95 active:bg-green-50 transition transform duration-100 ease-out">type Of Place</p>
+              <p className="px-4 py-2 border rounded-full cursor-pointer hover:shadow-lg active:scale-95 active:bg-green-50 transition transform duration-100 ease-out">Price</p>
+              <p className="px-4 py-2 border rounded-full cursor-pointer hover:shadow-lg active:scale-95 active:bg-green-50 transition transform duration-100 ease-out">rooms</p>
+              <p className="px-4 py-2 border rounded-full cursor-pointer hover:shadow-lg active:scale-95 active:bg-green-50 transition transform duration-100 ease-out">yei</p>
+            </div>
 
-          <div className="flex flex-col">
-            {searchResults.map((item) => (
-              <InfoCard key={item.id} img={item.img[0].url} location={item.location} title={item.title} description={item.description} star={item.star} price={item.price} total={item.total} />
-            ))}
-          </div>
-        </section>
-        <section className="hidden xl:inline-flex xl:min-w-[600px]">
-          <Map searchResults={searchResults} />
-        </section>
-      </main>
+            <div className="flex flex-col">
+              {searchResults.map((item) => (
+                <InfoCard key={item.id} img={item.img[0].url} location={item.location} title={item.title} description={item.description} star={item.star} price={item.price} total={item.total} imgUrl={item.imgUrl} />
+              ))}
+            </div>
+          </section>
+          <section className="hidden xl:inline-flex xl:min-w-[600px]">
+            <Map searchResults={searchResults} />
+          </section>
+        </main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </>
   );
 }
 
