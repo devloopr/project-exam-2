@@ -45,7 +45,7 @@ function Search({ searchResults }) {
 
             <div className="flex flex-col">
               {searchResults.map((item) => (
-                <InfoCard key={item.id} img={item.img[0] ? item.img[0].url : "https://res.cloudinary.com/dvloopr/image/upload/v1631716661/bang_0aba0a1c34.jpg"} location={item.location} title={item.title} description={item.description} star={item.star} price={item.price} total={item.total} imgUrl={item.imgUrl} />
+                <InfoCard key={item.id} img={item.img[0] ? item.img[0].url : "https://res.cloudinary.com/dvloopr/image/upload/v1631716661/bang_0aba0a1c34.jpg"} id={item.id} location={item.location} title={item.title} description={item.description} star={item.star} price={item.price} total={item.total} imgUrl={item.imgUrl} />
               ))}
             </div>
           </section>
@@ -64,6 +64,7 @@ export default Search;
 
 export async function getServerSideProps() {
   const searchResults = await fetch("http://localhost:1337/hotels").then((res) => res.json());
+  console.log(searchResults)
 
   return {
     props: {

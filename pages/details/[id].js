@@ -3,8 +3,10 @@ function details({ result }) {
 }
 
 export async function getServerSideProps(content) {
+  console.log(content)
   const res = await fetch(`http://localhost:1337/hotels/${content.params.id}`);
   const result = await res.json();
+  console.log("RESULT: ", result)
 
   return {
     props: {
