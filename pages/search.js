@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import { format } from "date-fns";
 import InfoCard from "../components/InfoCard";
 import Map from "../components/Map";
+import { NavBar } from "../components/NavBar";
 
 function Search({ searchResults }) {
   const router = useRouter();
@@ -24,6 +25,7 @@ function Search({ searchResults }) {
           <title>holidaZe</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
+        <NavBar />
         <Header placeholder={`Welcome to the login!`} />
 
         <main className="flex bg-green-50">
@@ -43,7 +45,7 @@ function Search({ searchResults }) {
 
             <div className="flex flex-col">
               {searchResults.map((item) => (
-                <InfoCard key={item.id} img={item.img[0].url} location={item.location} title={item.title} description={item.description} star={item.star} price={item.price} total={item.total} imgUrl={item.imgUrl} />
+                <InfoCard key={item.id} img={item.img[0] ? item.img[0].url : "https://res.cloudinary.com/dvloopr/image/upload/v1631716661/bang_0aba0a1c34.jpg"} location={item.location} title={item.title} description={item.description} star={item.star} price={item.price} total={item.total} imgUrl={item.imgUrl} />
               ))}
             </div>
           </section>

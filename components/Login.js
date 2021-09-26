@@ -5,7 +5,6 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
-
 const schema = yup.object().shape({
   password: yup.string().required("Enter your password").min(3),
   identifier: yup.string().matches(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/, "You have to enter an valid email adress"),
@@ -51,17 +50,28 @@ function login() {
 
   return (
     <>
-      <form className="p-8 flex flex-col" onSubmit={handleSubmit(loginHandler)}>
-        <label htmlFor="name">Username:</label>
-        <input placeholder="Username" onChange={(e) => setUsername(e.target.value)} type="email" {...register("identifier")} />
-        {errors.identifier && <span>{errors.identifier.message}</span>}
+      <div className="w-full bg-green-50">
+        <section className="pt-6 pb-20 flex items-center justify-center w-full">
+          <div className="w-full bg-green-100 shadow-xl rounded-lg h-full">
+            <form className="p-8 flex flex-col" onSubmit={handleSubmit(loginHandler)}>
+              <label className="pt-6 mb-2" htmlFor="name">
+                Username:
+              </label>
+              <input placeholder="Username" onChange={(e) => setUsername(e.target.value)} type="email" {...register("identifier")} />
+              {errors.identifier && <span>{errors.identifier.message}</span>}
 
-        <label htmlFor="password"> Password:</label>
-        <input placeholder="Must be at least 3 letters" onChange={(e) => setPassword(e.target.value)} name="password" type="password" {...register("password")} />
-        {errors.password && <span>{errors.password.message}</span>}
+              <label className="pt-6 mb-2" htmlFor="password">
+                {" "}
+                Password:
+              </label>
+              <input placeholder="Must be at least 3 letters" onChange={(e) => setPassword(e.target.value)} name="password" type="password" {...register("password")} />
+              {errors.password && <span>{errors.password.message}</span>}
 
-        <input type="submit" />
-      </form>
+              <input className="mt-4 text-sm text-gray-900 bg-red-400 px-2 py-2 rounded-lg  shadow-md hover:shadow-xl hover:bg-indigo-100 active:scale-90 transition cursor-pointer duration-150 hover:text-gray-600" type="submit" />
+            </form>
+          </div>
+        </section>
+      </div>
     </>
   );
 }
