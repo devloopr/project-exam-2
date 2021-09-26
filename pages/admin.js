@@ -14,7 +14,7 @@ function admin({ inboxMessages }) {
 }
 
 export async function getStaticProps() {
-  const inboxMessages = await fetch("http://localhost:1337/messages").then((res) => res.json());
+  const inboxMessages = await fetch("https://holidaze-backend-three.herokuapp.com/messages").then((res) => res.json());
   console.log(inboxMessages);
   return {
     props: {

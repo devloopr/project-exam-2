@@ -53,9 +53,9 @@ export default function Home({ exploreData, cardData }) {
 }
 
 export async function getStaticProps() {
-  const exploreData = await fetch("http://localhost:1337/smallcards").then((res) => res.json());
+  const exploreData = await fetch("https://holidaze-backend-three.herokuapp.com/smallcards").then((res) => res.json());
 
-  const cardData = await fetch("http://localhost:1337/hotels").then((res) => res.json());
+  const cardData = await fetch("https://holidaze-backend-three.herokuapp.com/hotels").then((res) => res.json());
 
   return {
     props: {

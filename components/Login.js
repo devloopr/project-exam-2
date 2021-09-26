@@ -23,7 +23,7 @@ function login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
-  const url = "http://localhost:1337/auth/local";
+  const url = "https://holidaze-backend-three.herokuapp.com/auth/local";
 
   async function loginHandler(data) {
     event.preventDefault();

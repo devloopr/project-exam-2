@@ -28,6 +28,16 @@ function Admin({ inboxMessages }) {
   const [hotels, setHotels] = useState([]);
   const [selectedHotel, setSelectedHotel] = useState(null);
 
+  async function deleteThis() {
+    const res = await axios.delete(`https://holidaze-backend-three.herokuapp.com/hotels/${id}`);
+
+    console.log(res);
+
+    setTimeout(() => {
+      window.location.reload();
+    });
+  }
+
   useEffect(() => {
     (async () => {
       try {
@@ -68,7 +78,7 @@ function Admin({ inboxMessages }) {
         const res = await axios.put(`${url}/${selectedHotel.id}`, data);
         console.log("selectedHotel==>>", res);
       } else {
-        // Send inn data som skal lages inn i strapi endpoint
+        // strapi endpoint
         const res = await axios.post(
           url,
           data /*{

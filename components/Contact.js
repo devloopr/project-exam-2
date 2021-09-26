@@ -29,7 +29,7 @@ function Contact() {
   });
 
   // Skriv inn urlen som du skal poste til. Sikre at alle permissions er satt, gjerne sett alle permission på Public ??
-  const url = "http://localhost:1337/messages";
+  const url = "https://holidaze-backend-three.herokuapp.com/messages";
   const [success, setSuccess] = useState("");
 
   async function sendForm(data) {

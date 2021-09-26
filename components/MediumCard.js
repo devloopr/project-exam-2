@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 function MediumCard({ id, img, title, imgUrl }) {
-  console.log(id)
+  console.log(id);
   return (
     <div className="cursor-pointer hover:scale-105 transform transition duration-300 ease-out mb-4">
       <Link href={`/details/${id}`}>

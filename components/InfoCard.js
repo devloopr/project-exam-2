@@ -31,7 +31,7 @@ function InfoCard({ id, img, location, title, description, star, price, total, i
         <div>
           {showEditButton && (
             <button className="text-gray-900 bg-red-400 px-6 py-2 shadow-md rounded-lg font-bold my-4 hover:shadow-xl hover:bg-green-300 active:scale-90 transition duration-150 hover:text-gray-600" onClick={editHotel}>
-              Edit
+              Edit - go to form
             </button>
           )}
         </div>

@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import { NavLink } from "./NavLink";
 
 export const NavBar = () => {
   const [active, setActive] = useState(false);

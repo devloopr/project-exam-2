@@ -2,7 +2,7 @@ import axios from "axios";
 
 function Inbox({ id, name, email, subject, message }) {
   async function deleteThis() {
-    const res = await axios.delete(`http://localhost:1337/messages/${id}`);
+    const res = await axios.delete(`https://holidaze-backend-three.herokuapp.com/messages/${id}`);
 
     console.log(res);
 
