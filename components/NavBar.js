@@ -1,10 +1,26 @@
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/router";
+import { NavLink } from "./NavLink";
 
 export const NavBar = () => {
   const [active, setActive] = useState(false);
   const handleClick = () => {
     setActive(!active);
+  };
+
+  const router = useRouter();
+
+  const search = () => {
+    router.push({
+      pathname: "/search",
+      query: {
+        location: "",
+        startDate: new Date().toISOString(),
+        endDate: new Date().toISOString(),
+        noOfGuests: 1,
+      },
+    });
   };
 
   return (
@@ -20,17 +36,18 @@ export const NavBar = () => {
         </button>
         <div className={`${active ? "" : "hidden"}   w-full lg:inline-flex lg:flex-grow lg:w-auto`}>
           <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
-            <Link href="/">
-              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-semibold items-center justify-center hover:bg-indigo-100 hover:text-red-500 ">HOME</a>
-            </Link>
-            <Link href="/search">
-              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-semibold items-center justify-center hover:bg-indigo-100 hover:text-red-500 ">HOTELS</a>
-            </Link>
-            <Link href="/">
-              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-semibold items-center justify-center hover:bg-indigo-100 hover:text-red-500 ">ABOUT</a>
-            </Link>
+            <a className={`${router.pathname == "/" ? "bg-indigo-100 lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-semibold items-center justify-center hover:bg-indigo-100 hover:text-red-500 " : "lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-semibold items-center justify-center hover:bg-indigo-100 hover:text-red-500 "}`}>
+              <Link href="/">HOME </Link>
+            </a>
+
+            <a
+              onClick={search}
+              className={`${router.pathname == "/search" ? "bg-indigo-100 lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 cursor-pointer font-semibold items-center justify-center hover:bg-indigo-100 hover:text-red-500 " : "lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-semibold items-center justify-center hover:bg-indigo-100 hover:text-red-500 "}`}>
+              HOTELS
+            </a>
+
             <Link href="/contact">
-              <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-semibold items-center justify-center hover:bg-indigo-100 hover:text-red-500 ">CONTACT</a>
+              <a className={`${router.pathname == "/contact" ? "bg-indigo-100 lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-semibold items-center justify-center hover:bg-indigo-100 hover:text-red-500 " : "lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-semibold items-center justify-center hover:bg-red-100 hover:text-red-500 "}`}> CONTACT</a>
             </Link>
           </div>
         </div>

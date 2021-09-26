@@ -5,7 +5,7 @@ import { NavBar } from "../components/NavBar";
 
 function admin({ inboxMessages }) {
   return (
-    <div>
+    <div className="bg-green-50">
       <NavBar />
       <Header />
       <Admin inboxMessages={inboxMessages} />

@@ -67,7 +67,7 @@ function login() {
               <input placeholder="Must be at least 3 letters" onChange={(e) => setPassword(e.target.value)} name="password" type="password" {...register("password")} />
               {errors.password && <span>{errors.password.message}</span>}
 
-              <input className="mt-4 text-sm text-gray-900 bg-red-400 px-2 py-2 rounded-lg  shadow-md hover:shadow-xl hover:bg-indigo-100 active:scale-90 transition cursor-pointer duration-150 hover:text-gray-600" type="submit" />
+              <input className="text-gray-900 bg-red-400 px-6 py-2 shadow-md rounded-lg font-bold my-4 hover:shadow-xl hover:bg-green-300 active:scale-90 transition duration-150 hover:text-gray-600" type="submit" />
             </form>
           </div>
         </section>

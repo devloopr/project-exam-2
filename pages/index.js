@@ -8,6 +8,7 @@ import Footer from "../components/Footer";
 import { NavBar } from "../components/NavBar";
 
 export default function Home({ exploreData, cardData }) {
+  console.log(cardData);
   return (
     <>
       <div className=" bg-green-50">
@@ -39,7 +40,7 @@ export default function Home({ exploreData, cardData }) {
 
             <div className="flex space-x-3 overflow-scroll pt-4 scrollbar-hide">
               {cardData?.map((item) => (
-                <MediumCard key={item.id} img={item.img[0] ? item.img[0].url : "https://res.cloudinary.com/dvloopr/image/upload/v1631716661/bang_0aba0a1c34.jpg"} title={item.title} />
+                <MediumCard key={item.id} id={item.id} img={item.img[0] ? item.img[0].url : "https://res.cloudinary.com/dvloopr/image/upload/v1631716661/bang_0aba0a1c34.jpg"} title={item.title} />
               ))}
             </div>
           </section>

@@ -61,8 +61,7 @@ function Contact() {
       <NavBar />
       <Header />
       <div className="py-12">
-        <h1>Contact us!</h1>
-        <p>lorem ipsum hallaaiii</p>
+        <h1 className="text-xl sm:text-1xl m-auto md:text-2xl xl:text-3xl w-[220px] pl-4 sm:w-[230px] md:w-[250px] xl:w-[260px] mb-3 p-2 bg-indigo-100 bg rounded-lg font-mono shadow-xl text-gray-900">Contact us!</h1>
       </div>
       <main className="flex flex-col-reverse md:flex-row bg-green-50 shadow-2xl border-2 border-opacity-50 md:w-7/12 p-4 rounded-lg flex-initial mb-20 mx-auto">
         <section className="bg-green-100 rounded-lg md:w-6/12 p-6">
