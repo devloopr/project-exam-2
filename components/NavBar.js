@@ -46,7 +46,7 @@ export const NavBar = () => {
             </a>
 
             <Link href="/contact">
-              <a className={`${router.pathname == "/contact" ? "bg-indigo-100 lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-semibold items-center justify-center hover:bg-indigo-100 hover:text-red-500 " : "lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-semibold items-center justify-center hover:bg-red-100 hover:text-red-500 "}`}> CONTACT</a>
+              <a className={`${router.pathname == "/contact" ? "bg-indigo-100 lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-semibold items-center justify-center hover:bg-indigo-100 hover:text-red-500 " : "lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-600 font-semibold items-center justify-center hover:bg-indigo-100 hover:text-red-500 "}`}> CONTACT</a>
             </Link>
           </div>
         </div>

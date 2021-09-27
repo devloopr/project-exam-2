@@ -19,7 +19,7 @@ function Footer() {
   };
 
   return (
-    <div className="grid grid-cols-1 place-items-center md:grid-cols-3 gap-y-10 md:px-32 py-14 bg-green-100 text-gray-600">
+    <div className="grid pt-8 grid-cols-1 place-items-center md:grid-cols-3 md:px-32 gap-32 bg-green-100 text-gray-600">
       <div className="space-y-4 text-xs text-gray-800 mt-2">
         <Link href="/">
           <h5 className="cursor-pointer hover:text-red-400 font-bold">HOME</h5>
